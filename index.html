@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+.myform{
+    text-align: center;
+    width: 20%;
+    position: relative;
+    top: 250px;
+}
+.myform:hover{
+    box-shadow: 5px 5px 18px rgba(143, 231, 42, 0.781);
+}
+input{
+    border: 1px solid tomato;
+    outline: none;
+}
+</style>
+<body>
+    <div class="myform mx-auto border border-success rounded">
+        <p class="h1">Enter the Array</p>
+        <input type="text" name="array" id="array" class="mt-5 rounded" ><br>
+        <button onclick="print2largest()" style="cursor: pointer;" class="btn btn-outline-danger mt-3">Submit</button><br><br>
+        <p id="inside_html"></p>
+    </div>
+    <script>        
+    
+            function print2largest() {
+                var x = document.getElementById("array");
+                var y = x.value;
+                var array = y.toString();
+                var arr = array.split(",");   
+                console.log(Array.isArray(arr));
+                    console.log(arr);             
+               var arr_size = arr.length;
+                let i;
+                let largest = second = -2454635434;
+                if (arr_size < 2) {
+                    document.write(" Invalid Input ");
+                    return;
+                }
+                for (i = 0 ;i<arr_size;i++){
+                    if (arr[i]>largest){
+                        second = largest ;
+                        largest = arr[i]
+                    }
+        
+                    else if (arr[i]!=largest && arr[i]>second ){
+                        second = arr[i];
+                    }
+                }
+        
+                if (second == -2454635434){
+                    
+                document.write("There is no second largest element<br>");
+                }
+                else{
+                    document.getElementById("inside_html").innerHTML = ("The second largest element is " + second);
+                        return;
+                    }
+                }
+        </script>
+        
+</body>
+</html>
